@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/aab2c8472b.js" crossorigin="anonymous"></script>
+    <script src="icons.js"></script>
+    <script src="frontend.js"></script>
+    <script src="main.js"></script>
+    <title>Matching cards game</title>
+</head>
+<body>
+    <div id="menu">
+        <div class="left" id="left">
+            <h1>Let's play <span class="fancy">memory<br>cards</span>,</h1>
+            <h2 id="controllable-h2"></h2>
+        </div>
+        <div class="right" id="right">
+            <div id="board-visualization"></div>
+            <div class="board-settings">
+                <div class="sliders">
+                    <input type="range" class="slider-board" step="2" oninput="visualizeBoard()" name="cols" id="columns-input" min="2" max="8">
+                    <label style="font-weight: 600; font-size: 20px;" for="cols"><span id="columns-counter"></span> <span  style="font-size: 14px; font-weight: 400;">COLUMNS</span></label>
+                    <input  type="range" class="slider-board" oninput="visualizeBoard()" name="rows" id="rows-input" min="2" max="5">
+                    <label style="font-weight: 600; font-size: 20px;" for="rows"><span id="rows-counter"></span> <span  style="font-size: 14px; font-weight: 400;">ROWS</span></label>
+                </div>
+                <div class="buttons">
+                    <div id="total-cards-counter"></div>
+                    <input type="button" onclick="startGame()" value="PLAY" id="start-game-btn">
+                </div>        
+            </div>          
+        </div>      
+    </div>
+    <div id="end-game-screen">
+        <h2>Game has ended!</h2>
+        <span id="game-time-span"></span>
+        <span id="move-data-span"></span>
+        <input type="button" onclick="startGame()" value="restart">
+        <input type="button" onclick="backToMenu()" value="back to menu">
+    </div>
+    <div id="main">
+        <div id="game-info">
+            <div id="timer"></div>
+            <div id="stats"></div>
+        </div>
+        <div id="board">
+            
+        </div>
+    </div>
+</body>
+</html>
